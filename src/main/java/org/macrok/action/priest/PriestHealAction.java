@@ -23,6 +23,11 @@ public class PriestHealAction implements Action, PriestAction {
                 robot.keyPress(KeyEvent.VK_4);
                 Thread.sleep(100);
                 robot.keyRelease(KeyEvent.VK_4);
+                Thread.sleep(1500);
+
+                robot.keyPress(KeyEvent.VK_C);
+                Thread.sleep(100);
+                robot.keyRelease(KeyEvent.VK_C);
 
                 Thread.sleep(60000);
             }
