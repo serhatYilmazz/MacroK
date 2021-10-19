@@ -6,4 +6,6 @@ public interface Action {
 
     void act(Robot robot);
 
+    String getActionName();
+
 }
