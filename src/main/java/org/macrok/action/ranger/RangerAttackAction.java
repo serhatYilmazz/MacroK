@@ -1,6 +1,7 @@
-package org.macrok.ranger;
+package org.macrok.action.ranger;
 
 import org.macrok.action.AttackAction;
+import org.macrok.constants.GlobalConstants;
 import org.springframework.stereotype.Service;
 
 import java.awt.*;
@@ -12,7 +13,7 @@ public class RangerAttackAction implements AttackAction, RangerAction {
     @Override
     public void act(Robot robot) {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(GlobalConstants.INITIAL_DELAY.getDelay());
             while (true) {
                 robot.keyPress(KeyEvent.VK_Q);
                 Thread.sleep(100);
@@ -24,7 +25,7 @@ public class RangerAttackAction implements AttackAction, RangerAction {
                 Thread.sleep(500);
             }
         } catch (InterruptedException e) {
-            System.out.println("Cancelled");
+            System.out.println(getActionName() + " is cancelled");
         }
     }
 

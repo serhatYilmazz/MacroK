@@ -1,4 +1,4 @@
-package org.macrok.ranger;
+package org.macrok.action.ranger;
 
 public interface RangerAction {
 }

@@ -1,8 +1,8 @@
-package org.macrok.ranger.constant;
+package org.macrok.action.ranger.constant;
 
 import lombok.Getter;
-import org.macrok.ranger.RangerAttackAction;
-import org.macrok.ranger.RangerDefenseAction;
+import org.macrok.action.ranger.RangerAttackAction;
+import org.macrok.action.ranger.RangerDefenseAction;
 
 @Getter
 public enum RangerActionConstant {
