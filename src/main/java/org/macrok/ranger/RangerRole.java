@@ -1,18 +1,22 @@
 package org.macrok.ranger;
 
 import lombok.RequiredArgsConstructor;
+import org.macrok.action.Action;
 import org.macrok.action.AttackAction;
 import org.macrok.action.DefenseAction;
+import org.macrok.ranger.constant.RangerActionConstant;
 import org.macrok.role.Role;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 @RequiredArgsConstructor
 @Component
-public abstract class RangerRole implements Role {
+public class RangerRole implements Role {
 
-    private final RangerAttackAction rangerAttackAction;
-
-    private final RangerDefenseAction rangerDefenseAction;
+    private final Map<String, RangerAction> rangerActionsMap;
 
     @Override
     public String getRoleName() {
@@ -21,11 +25,20 @@ public abstract class RangerRole implements Role {
 
     @Override
     public AttackAction getAttackAction() {
-        return rangerAttackAction;
+        return (AttackAction) rangerActionsMap.get(RangerActionConstant.ATTACK.getValue());
     }
 
     @Override
     public DefenseAction getDefenseAction() {
-        return rangerDefenseAction;
+        return (DefenseAction) rangerActionsMap.get(RangerActionConstant.DEFENSE.getValue());
     }
+
+    @Override
+    public Collection<? extends Action> getActions() {
+        return rangerActionsMap.values()
+                .stream()
+                .map(a -> (Action) a)
+                .collect(Collectors.toList());
+    }
+
 }

@@ -4,6 +4,7 @@ import org.macrok.action.DefenseAction;
 import org.springframework.stereotype.Service;
 
 import java.awt.*;
+
 @Service
 public class RangerDefenseAction implements DefenseAction, RangerAction {
 
