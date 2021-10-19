@@ -35,6 +35,7 @@ public class MainPanel {
 
         jFrame.add(jTabbedPane);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jFrame.setAlwaysOnTop(true);
         jFrame.setTitle("MacroK");
         jFrame.setSize(new Dimension(200, 200));
         jFrame.setVisible(true);
